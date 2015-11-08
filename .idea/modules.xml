@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ThemovieDB.iml" filepath="$PROJECT_DIR$/ThemovieDB.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/firebase-client-android-2.4.0/firebase-client-android-2.4.0.iml" filepath="$PROJECT_DIR$/firebase-client-android-2.4.0/firebase-client-android-2.4.0.iml" />
     </modules>
   </component>
 </project>
