@@ -10,7 +10,9 @@
 
 
 ###Query search in movies
-https://api.themoviedb.org/3/search/movie?query=STRING&api_key=APP_KEY
+
+> https://api.themoviedb.org/3/search/movie?query=STRING&api_key=APP_KEY
 
 ####Query search in series
-https://api.themoviedb.org/3/search/tv?query=STRING&api_key=APP_KEY
+
+> https://api.themoviedb.org/3/search/tv?query=STRING&api_key=APP_KEY
