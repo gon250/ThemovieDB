@@ -24,5 +24,6 @@
         completions."
     </string>
     <string name="item_loading">loading..</string>
+    <string name="action_sign_up">Sign up</string>
 
 </resources>
