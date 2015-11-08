@@ -28,7 +28,7 @@ public class SerieMovieAdapter extends RecyclerView.Adapter<ViewHolderSerieMovie
 
     @Override
     public void onBindViewHolder(ViewHolderSerieMovie holder, int position) {
-        String item = result.get(position);
+        //String item = result.get(position);
 
             //TODO: Set data comming from result
             //holder.headerImage =

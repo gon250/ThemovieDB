@@ -17,11 +17,17 @@ public class Tab1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View v = inflater.inflate(R.layout.tab_1,container,false);
+        return v;
+
+        /*
         recyclerView = (RecyclerView) inflater.inflate(R.layout.recycler_view_tab, container, false);
 
         //TODO: Implement content
 
         return recyclerView;
+        */
     }
 
 }
