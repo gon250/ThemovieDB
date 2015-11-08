@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.firebase.client.Firebase;
+
 import Adapters.TabAdapter;
 import Tab.Tab1;
 import Tab.Tab2;
