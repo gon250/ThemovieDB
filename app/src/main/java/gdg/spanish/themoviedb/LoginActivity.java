@@ -1,5 +1,7 @@
 package gdg.spanish.themoviedb;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.app.LoaderManager.LoaderCallbacks;
 
@@ -22,6 +24,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.client.AuthData;
 import com.firebase.client.Firebase;
@@ -92,11 +95,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 ref.authWithPassword(emailToCheck, passToCheck, new Firebase.AuthResultHandler() {
                     public void onAuthenticated(AuthData authData) {
                         String uid = authData.getUid();
-                        System.out.println(uid);
+                        changeActivity();
                     }
 
                     public void onAuthenticationError(FirebaseError error) {
 
+                        showErrorToast(R.string.loging_error);
                     }
                 });
 
@@ -116,12 +120,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                     @Override
                     public void onSuccess(Map<String, Object> stringObjectMap) {
                         String uid = (String) stringObjectMap.get("uid");
-                        System.out.println(uid);
+                        changeActivity();
                     }
 
                     @Override
                     public void onError(FirebaseError firebaseError) {
-
+                        showErrorToast(R.string.signup_error);
                     }
                 });
             }
@@ -131,6 +135,20 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+    }
+
+    private void changeActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void showErrorToast(int ref) {
+        Context context = getApplicationContext();
+        CharSequence text = getText(ref);
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 
     @Override
