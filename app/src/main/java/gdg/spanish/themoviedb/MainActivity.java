@@ -11,9 +11,9 @@ import android.view.MenuItem;
 import com.firebase.client.Firebase;
 
 import gdg.spanish.themoviedb.Adapters.TabAdapter;
-import Tab.Tab1;
-import Tab.Tab2;
-import Tab.Tab3;
+import gdg.spanish.themoviedb.Tab.Tab1;
+import gdg.spanish.themoviedb.Tab.Tab2;
+import gdg.spanish.themoviedb.Tab.Tab3;
 
 public class MainActivity extends AppCompatActivity {
 

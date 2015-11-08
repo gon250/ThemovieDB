@@ -1,4 +1,4 @@
-package Tab;
+package gdg.spanish.themoviedb.Tab;
 
 
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import gdg.spanish.themoviedb.R;
 
-public class Tab2 extends Fragment {
+public class Tab1 extends Fragment {
 
     private RecyclerView recyclerView;
 
@@ -25,3 +25,4 @@ public class Tab2 extends Fragment {
     }
 
 }
+

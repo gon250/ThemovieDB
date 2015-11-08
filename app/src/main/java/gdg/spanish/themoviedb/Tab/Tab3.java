@@ -1,4 +1,4 @@
-package Tab;
+package gdg.spanish.themoviedb.Tab;
 
 
 import android.os.Bundle;
