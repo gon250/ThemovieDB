@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">ThemovieDB</string>
+
+    <!-- Strings related to Tabs -->
+    <string name="text_tab_title_1">Favourites</string>
+    <string name="text_tab_title_2">Series</string>
+    <string name="text_tab_title_3">Movies</string>
+
+
+    <string name="user_action_text">Profile</string>
+    <string name="action_settings">Seettings</string>
+
 </resources>
