@@ -29,6 +29,7 @@ import com.firebase.client.FirebaseError;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -60,6 +61,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Firebase.setAndroidContext(this);
         // Set up the login form.
         mEmailView = (EditText) findViewById(R.id.email);
 
@@ -76,6 +79,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         });
 
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        Button mEmailSignUpButton = (Button) findViewById(R.id.email_sign_up_button);
 
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -83,7 +87,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 String emailToCheck = mEmailView.getText().toString();
                 String passToCheck = mPasswordView.getText().toString();
 
-                Firebase ref = new Firebase("");
+                Firebase ref = new Firebase("https://intense-fire-6233.firebaseio.com/");
 
                 ref.authWithPassword(emailToCheck, passToCheck, new Firebase.AuthResultHandler() {
                     public void onAuthenticated(AuthData authData) {
@@ -97,6 +101,29 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 });
 
 
+            }
+        });
+
+        mEmailSignUpButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String emailToCheck = mEmailView.getText().toString();
+                String passToCheck = mPasswordView.getText().toString();
+
+                Firebase ref = new Firebase("https://intense-fire-6233.firebaseio.com/");
+
+                ref.createUser(emailToCheck, passToCheck, new Firebase.ValueResultHandler<Map<String, Object>>() {
+                    @Override
+                    public void onSuccess(Map<String, Object> stringObjectMap) {
+                        String uid = (String) stringObjectMap.get("uid");
+                        System.out.println(uid);
+                    }
+
+                    @Override
+                    public void onError(FirebaseError firebaseError) {
+
+                    }
+                });
             }
         });
 
