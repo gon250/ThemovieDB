@@ -1,4 +1,4 @@
-# GDG - ThemovieDB
+# GDG - Movie Friends
 
 ### Source
 
