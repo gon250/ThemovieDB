@@ -10,7 +10,7 @@ import android.view.MenuItem;
 
 import com.firebase.client.Firebase;
 
-import Adapters.TabAdapter;
+import gdg.spanish.themoviedb.Adapters.TabAdapter;
 import Tab.Tab1;
 import Tab.Tab2;
 import Tab.Tab3;
