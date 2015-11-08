@@ -21,6 +21,10 @@ public class Tab2 extends Fragment {
                              Bundle savedInstanceState) {
         recyclerView = (RecyclerView) inflater.inflate(R.layout.recycler_view_tab, container, false);
 
+
+
+        //TODO: GET SERIES
+
         SerieMovieAdapter adapter = new SerieMovieAdapter();
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
