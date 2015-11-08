@@ -14,9 +14,14 @@ import android.view.View;
 import com.firebase.client.Firebase;
 
 import gdg.spanish.themoviedb.Adapters.TabAdapter;
+import gdg.spanish.themoviedb.Models.Movie;
+import gdg.spanish.themoviedb.Services.TheMovieDbService;
 import gdg.spanish.themoviedb.Tab.Tab1;
 import gdg.spanish.themoviedb.Tab.Tab2;
 import gdg.spanish.themoviedb.Tab.Tab3;
+import java.util.List;
+import retrofit.Retrofit;
+import retrofit.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private TabLayout tabs;
     private TabAdapter adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,4 +84,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

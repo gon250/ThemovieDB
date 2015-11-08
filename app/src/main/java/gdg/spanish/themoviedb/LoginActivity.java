@@ -34,13 +34,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import gdg.spanish.themoviedb.Models.Movie;
+import gdg.spanish.themoviedb.Services.TheMovieDbService;
+import retrofit.Call;
+import retrofit.GsonConverterFactory;
+import retrofit.Retrofit;
+
 import static android.Manifest.permission.READ_CONTACTS;
 
 /**
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
-
+    private final String BASE_URL = "https://api.themoviedb.org/3";
+    private final String APP_KEY = "78536a9e51501eed828af40186b75349";
     /**
      * Id to identity READ_CONTACTS permission request.
      */
@@ -64,7 +71,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+      //  List<Movie> elements = SearchMovies(0,"Superman");
         Firebase.setAndroidContext(this);
         // Set up the login form.
         mEmailView = (EditText) findViewById(R.id.email);
@@ -165,5 +172,27 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     public void onLoaderReset(Loader<Cursor> loader) {
 
     }
+/*
+    public List<Movie> SearchMovies(int type,String queryString){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        TheMovieDbService service = retrofit.create(TheMovieDbService.class);
+
+        Call<List<Movie>> elementsList = null;
+        switch(type){
+            case 0:
+                elementsList = service.getMovies(queryString,APP_KEY);
+                break;
+
+            case 1:
+                elementsList = service.getSeries(queryString, APP_KEY);
+                break;
+
+        }
+
+        return elementsList;
+    }*/
 }
 
