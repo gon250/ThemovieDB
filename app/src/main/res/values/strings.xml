@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ThemovieDB</string>
+    <string name="app_name">Movie Friends</string>
 
     <!-- Strings related to Tabs -->
     <string name="text_tab_title_1">Friends</string>
