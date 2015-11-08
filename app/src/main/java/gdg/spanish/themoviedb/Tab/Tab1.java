@@ -19,6 +19,11 @@ public class Tab1 extends Fragment {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.tab_1,container,false);
+
+
+
+
+
         return v;
 
         /*
